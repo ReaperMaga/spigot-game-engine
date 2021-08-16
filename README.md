@@ -3,13 +3,13 @@
 
 The project was made to simplify the creation of minecraft minigames
 
-### Features
+## Features
 
-### Getting started
+## Getting started
 
-### Goals
+## Goals
 
-### Contributing
+## Contributing
 
-### Licensing
+## Licensing
 The content of this project is licensed under [MIT license](LICENSE.md).
