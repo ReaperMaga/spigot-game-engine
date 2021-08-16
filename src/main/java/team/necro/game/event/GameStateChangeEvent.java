@@ -1,0 +1,26 @@
+package team.necro.game.event;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import org.bukkit.event.Event;
+import org.bukkit.event.HandlerList;
+import team.necro.game.Game;
+
+@Getter
+@AllArgsConstructor
+public class GameStateChangeEvent extends Event {
+
+    private static final HandlerList HANDLERS = new HandlerList();
+
+    private Game game;
+    private int state;
+
+    @Override
+    public HandlerList getHandlers() {
+        return HANDLERS;
+    }
+
+    public static HandlerList getHandlerList() {
+        return HANDLERS;
+    }
+}
