@@ -1,10 +1,12 @@
 package team.necro.game.module;
 
 import com.google.common.collect.Maps;
+import lombok.Getter;
 
 import javax.annotation.Nullable;
 import java.util.Map;
 
+@Getter
 public abstract class AbstractStateChangeModule<T> implements GameModule {
 
     private Map<Integer, T> entities;

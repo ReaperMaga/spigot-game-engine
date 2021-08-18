@@ -19,8 +19,8 @@ public class PlayerFoodLevelChangeListener implements Listener {
     @EventHandler
     public void onCall(FoodLevelChangeEvent event) {
         Player player = (Player) event.getEntity();
-        if(game.existsParticipant(player.getUniqueId())) {
-            GameProperties properties = module.getProperties(game.getInfo().getState());
+        if(game.getParticipantRegistry().existsParticipant(player.getUniqueId())) {
+            GameProperties properties = module.getEntity(game.getInfo().getState());
             if(!properties.isAllowHunger()) {
                 player.setSaturation(20f);
                 event.setCancelled(true);

@@ -20,8 +20,8 @@ public class PlayerBlockBreakListener implements Listener {
     @EventHandler
     public void onCall(BlockBreakEvent event) {
         Player player = event.getPlayer();
-        if(game.existsParticipant(player.getUniqueId())) {
-            GameProperties properties = module.getProperties(game.getInfo().getState());
+        if(game.getParticipantRegistry().existsParticipant(player.getUniqueId())) {
+            GameProperties properties = module.getEntity(game.getInfo().getState());
             if(!properties.isAllowBlockBreak()) {
                 event.setCancelled(true);
             }

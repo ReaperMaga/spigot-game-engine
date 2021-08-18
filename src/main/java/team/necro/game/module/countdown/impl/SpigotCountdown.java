@@ -43,7 +43,7 @@ public class SpigotCountdown implements Countdown {
     @Override
     public void start(Game game) {
         for(CountdownListener listener : listeners) {
-            listener.onStart();
+            listener.onStart(game);
         }
 
         task = new BukkitRunnable() {
@@ -52,12 +52,12 @@ public class SpigotCountdown implements Countdown {
                 if(remaining <= 0) {
                     stop();
                     for(CountdownListener listener : listeners) {
-                        listener.onEnd();
+                        listener.onEnd(game);
                     }
                 } else {
                     boolean decrement = true;
                     for(CountdownListener listener : listeners) {
-                        if(!listener.onCall()) {
+                        if(!listener.onCall(game)) {
                             decrement = false;
                         }
                     }

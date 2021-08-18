@@ -20,8 +20,8 @@ public class PlayerBlockPlaceListener implements Listener {
     @EventHandler
     public void onCall(BlockPlaceEvent event) {
         Player player = event.getPlayer();
-        if(game.existsParticipant(player.getUniqueId())) {
-            GameProperties properties = module.getProperties(game.getInfo().getState());
+        if(game.getParticipantRegistry().existsParticipant(player.getUniqueId())) {
+            GameProperties properties = module.getEntity(game.getInfo().getState());
             if(!properties.isAllowBlockPlace()) {
                 event.setCancelled(true);
             }

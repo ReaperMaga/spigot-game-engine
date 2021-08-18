@@ -7,15 +7,23 @@ import team.necro.game.event.GameStateChangeEvent;
 @Getter
 public class GameInfo {
 
+    private final Game game;
+
     private int state;
     private String mapName;
 
-    public void changeState(Game game, int state) {
+    public GameInfo(Game game) {
+        this.game = game;
+        this.state = 0;
+        this.mapName = "";
+    }
+
+    public void setState(int state) {
         this.state = state;
         Bukkit.getPluginManager().callEvent(new GameStateChangeEvent(game, state));
     }
 
-    public void setMapName(String mapName) {
+    public void changeMap(String mapName) {
         this.mapName = mapName;
     }
 }

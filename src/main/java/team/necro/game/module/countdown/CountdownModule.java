@@ -10,6 +10,7 @@ import team.necro.game.module.GameModule;
 import team.necro.game.module.countdown.listener.GameChangeStateListener;
 
 import javax.annotation.Nullable;
+import java.util.Map;
 
 @Getter
 @Setter
@@ -17,6 +18,10 @@ public class CountdownModule extends AbstractStateChangeModule<Countdown> {
 
     @Nullable
     private Countdown currentCountdown;
+
+    public CountdownModule(Map<Integer, Countdown> entities) {
+        super(entities);
+    }
 
     @Override
     public void init(Game game) {

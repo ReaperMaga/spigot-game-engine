@@ -1,24 +1,28 @@
 package team.necro.game;
 
-import com.google.common.collect.Maps;
 import lombok.SneakyThrows;
 import org.bukkit.plugin.java.JavaPlugin;
 import team.necro.game.bootstrap.GameBootstrap;
 import team.necro.game.bootstrap.GameScope;
 import team.necro.game.module.countdown.CountdownModule;
+import team.necro.game.module.countdown.template.LobbyCountdown;
+import team.necro.game.module.properties.PropertiesModule;
+
+import java.util.Map;
 
 public class TestGame extends JavaPlugin {
 
     @Override
     @SneakyThrows
     public void onEnable() {
+        CountdownModule countdownModule = new CountdownModule(Map.of(0, new LobbyCountdown(20)));
+
         GameBootstrap bootstrap = new GameBootstrap(this, "Test", GameScope.SERVER)
-                .useModules(new CountdownModule());
+                .useModules(new PropertiesModule(), countdownModule);
         Game game = new Game(bootstrap);
         game.init();
 
-
-        CountdownModule countdownModule = game.getModule(CountdownModule.class);
+        game.getInfo().setState(0);
 
     }
 }

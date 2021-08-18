@@ -14,10 +14,9 @@ public class GameChangeStateListener implements Listener {
 
     @EventHandler
     public void onCall(GameStateChangeEvent event) {
-        if(module.existsCountdownOnState(event.getState())) {
+        if(module.existsEntity(event.getState())) {
             module.stopCurrentCountdown();
-
-            Countdown countdown = module.getCountdown(event.getState());
+            Countdown countdown = module.getEntity(event.getState());
             if (!countdown.isRunning()) {
                 countdown.start(event.getGame());
             }

@@ -6,9 +6,7 @@ import org.bukkit.plugin.PluginManager;
 import team.necro.game.Game;
 import team.necro.game.module.AbstractLoadingStateChangeModule;
 import team.necro.game.module.GameModule;
-import team.necro.game.module.properties.listener.PlayerBlockBreakListener;
-import team.necro.game.module.properties.listener.PlayerBlockPlaceListener;
-import team.necro.game.module.properties.listener.PlayerFoodLevelChangeListener;
+import team.necro.game.module.properties.listener.*;
 
 @Getter
 public class PropertiesModule extends AbstractLoadingStateChangeModule<GameProperties> {
@@ -19,6 +17,8 @@ public class PropertiesModule extends AbstractLoadingStateChangeModule<GamePrope
         manager.registerEvents(new PlayerFoodLevelChangeListener(game, this), game.getPlugin());
         manager.registerEvents(new PlayerBlockBreakListener(game, this), game.getPlugin());
         manager.registerEvents(new PlayerBlockPlaceListener(game, this), game.getPlugin());
+        manager.registerEvents(new PlayerJoinListener(game), game.getPlugin());
+        manager.registerEvents(new PlayerQuitListener(game), game.getPlugin());
     }
 
     @Override
