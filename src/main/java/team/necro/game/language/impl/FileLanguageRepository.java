@@ -11,7 +11,7 @@ import java.io.File;
 public class FileLanguageRepository extends AbstractGsonCrudRepository<Language> {
 
     public FileLanguageRepository(Game game) {
-        super(game.getBootstrap().getDirectory().concat(File.separator).concat("languages").concat(File.separator), Language.class);
+        super(game.getBootstrap().getDirectory().concat("languages").concat(File.separator), Language.class);
     }
 
 

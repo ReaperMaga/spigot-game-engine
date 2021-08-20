@@ -5,7 +5,6 @@ import org.bukkit.entity.Player;
 import team.necro.game.participant.GameParticipant;
 import team.necro.game.participant.GameParticipantMode;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 

@@ -18,4 +18,8 @@ public class GameProperties {
     private boolean allowEntityDamage;
 
     private boolean allowInventoryClick;
+
+    private boolean allowWeather;
+    private boolean allowLeavesDecay;
+    private boolean allowLiquidPhysics;
 }

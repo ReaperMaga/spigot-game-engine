@@ -30,7 +30,7 @@ public class GameBootstrap {
         this.scope = scope;
         this.modules = Maps.newHashMap();
 
-        this.directory = new StringBuilder("plugins").append(File.separator).append(plugin.getDescription().getName()).toString();
+        this.directory = new StringBuilder("plugins").append(File.separator).append(plugin.getDescription().getName()).append(File.separator).toString();
         this.allowReconnect = true;
         this.minPlayers = 2;
         this.maxPlayers = 8;

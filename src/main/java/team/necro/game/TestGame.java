@@ -6,6 +6,7 @@ import team.necro.game.bootstrap.GameBootstrap;
 import team.necro.game.bootstrap.GameScope;
 import team.necro.game.module.countdown.CountdownModule;
 import team.necro.game.module.countdown.template.LobbyCountdown;
+import team.necro.game.module.map.MapModule;
 import team.necro.game.module.properties.PropertiesModule;
 
 import java.util.Map;
@@ -18,7 +19,7 @@ public class TestGame extends JavaPlugin {
         CountdownModule countdownModule = new CountdownModule(Map.of(0, new LobbyCountdown(20)));
 
         GameBootstrap bootstrap = new GameBootstrap(this, "Test", GameScope.SERVER)
-                .useModules(new PropertiesModule(), countdownModule);
+                .useModules(new PropertiesModule(), new MapModule(), countdownModule);
         Game game = new Game(bootstrap);
         game.init();
 

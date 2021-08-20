@@ -28,6 +28,7 @@ public class GsonFileEntity<T> {
         load();
     }
 
+
     public boolean exists() {
         return this.file.exists();
     }
