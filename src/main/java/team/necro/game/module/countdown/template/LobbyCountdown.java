@@ -39,6 +39,13 @@ public class LobbyCountdown extends SpigotCountdown implements CountdownListener
             setRemaining(timer);
             setWaiting(false);
             game.getLanguageProvider().broadcastMessage("lobby.countdown.broadcast.start");
+        } else {
+            if(game.getParticipantRegistry().getParticipants().size() < game.getBootstrap().getMinPlayers()) {
+                game.getLanguageProvider().broadcastMessage("lobby.countdown.broadcast.reset");
+                setRemaining(5);
+                setWaiting(true);
+                return true;
+            }
         }
         switch (Math.toIntExact(getRemaining())) {
             case 60: case 45: case 30: case 15: case 10: case 5: case 4: case 3: case 2: case 1:

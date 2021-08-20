@@ -18,13 +18,14 @@
             <name>Maga</name>
             <email>reapermaga@gmail.com</email>
         </developer>
-
-        <developer>
-            <name>Flammenfuchs_YT</name>
-            <email>flammenfuchsyt@gmail.com</email>
-        </developer>
-
     </developers>
+
+    <repositories>
+        <repository>
+            <id>smashmc-public</id>
+            <url>https://repo.smashmc.eu/public</url>
+        </repository>
+    </repositories>
 
     <build>
         <plugins>
@@ -52,6 +53,14 @@
     </build>
 
     <dependencies>
+
+        <dependency>
+            <groupId>de.liquiddev</groupId>
+            <artifactId>command</artifactId>
+            <version>1.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
